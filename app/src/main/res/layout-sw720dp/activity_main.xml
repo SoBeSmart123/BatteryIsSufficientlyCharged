@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Offwhite"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    tools:context="vibrate.charge.com.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_above="@+id/dummyview"
+        android:gravity="center"
+        android:id="@+id/desc"
+        style="@style/Base.TextAppearance.AppCompat.Display3"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/this_simple_app_will_vibrate_when_power_is_plugged_in"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/dummyview"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_centerInParent="true"
+    android:layout_alignParentStart="true"
+    android:id="@+id/small_text"
+    android:gravity="left"
+    android:onClick="closeApp"
+    android:layout_below="@+id/dummyview"
+    android:layout_margin="@dimen/activity_horizontal_margin">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/desc1"
+        style="@style/Base.TextAppearance.AppCompat.Display1"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/small_text"
+        />
+</LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/credit"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/small_text"
+        style="@style/Base.TextAppearance.AppCompat.Display1"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/credit"
+        />
+
+    <!--<Button-->
+        <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:text="@string/i_want_to_suggest_more_functionality_in_this_app"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:background="@color/white"-->
+        <!--android:layout_below="@+id/dummyview"-->
+        <!--android:onClick="openEmail"/>-->
+
+</RelativeLayout>
