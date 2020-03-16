@@ -16,30 +16,30 @@ public class MyFenceReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
 
-        if (intent.getAction().equalsIgnoreCase("android.intent.action.ACTION_POWER_CONNECTED")) {
-            if(shouldVibrateOnChargingConnected(context)) {
-              vibrate(context);
-            }
-        }
-
-        if (intent.getAction().equalsIgnoreCase("android.intent.action.ACTION_POWER_DISCONNECTED")) {
-            if(shouldVibrateOnChargingDisconnected(context)) {
-                vibrate(context);
-            }
-        }
+        if (intent.getAction().equalsIgnoreCase("android.intent.action.BATTERY_OKAY")) {
+            // if(shouldVibrateOnChargingConnected(context)) {
+            speakBatteryIsOK(context);
+        //}
     }
 
-    private void vibrate(Context context) {
-        Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-           v.vibrate(VibrationEffect.createOneShot(500,50));
-        } else {
-            // Vibrate for 500 milliseconds
-            v.vibrate(500);
-        }
-
-
+//        if (intent.getAction().equalsIgnoreCase("android.intent.action.ACTION_POWER_DISCONNECTED")) {
+//            if(shouldVibrateOnChargingDisconnected(context)) {
+//                vibrate(context);
+//            }
+//        }
     }
+
+//    private void vibrate(Context context) {
+//        Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//           v.vibrate(VibrationEffect.createOneShot(500,50));
+//        } else {
+//            // Vibrate for 500 milliseconds
+//            v.vibrate(500);
+//        }
+
+
+    //}
 
     private boolean shouldVibrateOnChargingConnected(Context context) {
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(context);
