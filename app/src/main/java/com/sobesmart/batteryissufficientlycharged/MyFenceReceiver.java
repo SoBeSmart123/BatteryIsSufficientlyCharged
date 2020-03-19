@@ -16,10 +16,16 @@ public class MyFenceReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
 
-        if (intent.getAction().equalsIgnoreCase("android.intent.action.BATTERY_OKAY")) {
+      //  if (intent.getAction().equalsIgnoreCase("android.intent.action.BATTERY_OKAY")) {
             // if(shouldVibrateOnChargingConnected(context)) {
             speakBatteryIsOK(context);
         //}
+    }
+
+    private void speakBatteryIsOK(Context context) {
+        Intent TTSServiceIntent = new Intent(context, TTSService.class);
+        TTSServiceIntent.putExtra(context.getString(R.string.READ_TEXT),context.getString(R.string.BATTERY_IS_SUFFIECIENTLY_CHARGED));
+        context.startService(TTSServiceIntent);
     }
 
 //        if (intent.getAction().equalsIgnoreCase("android.intent.action.ACTION_POWER_DISCONNECTED")) {
@@ -27,7 +33,7 @@ public class MyFenceReceiver extends BroadcastReceiver {
 //                vibrate(context);
 //            }
 //        }
-    }
+    //}
 
 //    private void vibrate(Context context) {
 //        Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);

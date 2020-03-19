@@ -17,6 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".TTSService"
+            android:enabled="true"
+            android:exported="true"></service>
         <receiver android:name=".MyFenceReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BATTERY_OKAY" />

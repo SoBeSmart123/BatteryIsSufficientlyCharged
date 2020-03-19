@@ -57,6 +57,8 @@
         <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
         <string name="key_vibrate">key_vibrate</string>
         <string name="key_send_feedback">key_send_feedback</string>
+        <string name="READ_TEXT">readText</string>
+        <string name="BATTERY_IS_SUFFIECIENTLY_CHARGED">Low Battery Mode Turned Off</string>
 
     </resources>
 
